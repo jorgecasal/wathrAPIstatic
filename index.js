@@ -26,12 +26,11 @@ window.addEventListener('load', () => {
       fetch(api)
         .then(response => response.json())
         .then(data => {
-          console.log(data);
           locationTimezone.textContent = data.timezone.replace(/^(.*[\\\/])/,"").replace(/_/g, " ");
           temperatureDegree.textContent = Math.floor(data.current.temp - 273.15);
           temperatureFeels.textContent = `Feels like ${Math.floor(data.current.temp - 273.15)} C°`;
           temperatureDescription.textContent = `looks like ${data.current.weather[0].description}`
-          temperatureIcon.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
+          temperatureIcon.src = `https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
 
           let degree = data.current.wind_deg
           windDegree.textContent = data.current.wind_deg
@@ -66,7 +65,6 @@ window.addEventListener('load', () => {
 
 searchBox.addListener('places_changed', () => {
   const place = searchBox.getPlaces()[0]
-  console.log(place.address_components[0].long_name);
 
   if (place == null) return
    lat = place.geometry.location.lat()
@@ -76,13 +74,12 @@ searchBox.addListener('places_changed', () => {
   fetch(api)
   .then(response => response.json())
   .then(data => {
-    console.log(data);
 
     locationTimezone.textContent = place.address_components[0].long_name;
     temperatureDegree.textContent = Math.floor(data.current.temp - 273.15);
     temperatureFeels.textContent = `Feels like ${Math.floor(data.current.temp - 273.15)} C°`;
     temperatureDescription.textContent = `looks like ${data.current.weather[0].description}`
-    temperatureIcon.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
+    temperatureIcon.src = `https://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
 
     let degree = data.current.wind_deg
     windDegree.textContent = data.current.wind_deg
