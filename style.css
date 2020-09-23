@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  background-image: radial-gradient( rgb(240, 240, 240), rgba(240, 240, 240, 0.63)), url('https://images.assetsdelivery.com/compings_v2/tupungato/tupungato1304/tupungato130400084.jpg')
+  
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}
+
+.location, .temperature {
+  height: 30hv;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+}
+
+.temperature {
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.degree-section {
+  display: flex;
+  align-items: center;
+}
+
+.temperature-feels {
+  margin-top: 10px;
+}
+
+.temperature-description {
+  margin-top: 7px;
+}
+
+.wind-degree {
+  margin-top: 7px;
+  max-width: 350px;
+}
+
+.degree-section span {
+  margin: 10px;
+  font-size: 30px;
+}
+
+.degree-section h2 {
+  font-size: 40px;
+}
+
+.city-search {
+  width: 70%;
+  max-width: 180;
+  padding:5px 5px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 16px 16px 16px 16px;
+  border-bottom: solid 3px #333;
+  color: #333;
+  font-size: 17px;
+  font-weight: 300;
+  transition: 0.2s ease-out;
+  text-align-last: center;
+  margin-top: 10px;
+}
